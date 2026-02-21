@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>韩国高校留学生项目信息收集 — 工作计划报告</title>
+<style>
+:root{--indigo:#4f46e5;--indigo-dark:#3730a3;--indigo-light:#e0e7ff;--purple:#7c3aed;--teal:#0d9488;--green:#16a34a;--rose:#e11d48;--amber:#d97706;--s50:#f8fafc;--s100:#f1f5f9;--s200:#e2e8f0;--s300:#cbd5e1;--s400:#94a3b8;--s500:#64748b;--s600:#475569;--s700:#334155;--s800:#1e293b;--s900:#0f172a;--font:'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font);background:var(--s50);color:var(--s800);min-height:100vh}
+.hdr{background:linear-gradient(135deg,#312e81 0%,#4f46e5 50%,#7c3aed 100%);color:#fff;padding:40px 32px 32px}
+.hdr-in{max-width:900px;margin:0 auto;display:flex;align-items:flex-start;justify-content:space-between;gap:24px}
+.badges{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap}
+.bdg{font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px}
+.bdg-a{background:rgba(255,255,255,.2);color:#fff}
+.bdg-b{background:rgba(251,146,60,.8);color:#fff}
+.hdr h1{font-size:28px;font-weight:900;margin-bottom:6px;line-height:1.2}
+.hdr p{font-size:16px;color:rgba(255,255,255,.85);margin-bottom:16px;font-weight:600}
+.hdr-meta{display:flex;gap:20px;font-size:13px;color:rgba(255,255,255,.7);flex-wrap:wrap}
+.hdr-stats{display:flex;gap:12px;flex-shrink:0}
+.stat{background:rgba(255,255,255,.12);border-radius:14px;padding:12px 18px;text-align:center}
+.stat-n{font-size:26px;font-weight:900}
+.stat-l{font-size:11px;color:rgba(255,255,255,.7);margin-top:2px}
+/* Language switcher */
+.lang-sw{display:flex;gap:6px;margin-bottom:14px}
+.lang-btn{padding:5px 14px;border:none;border-radius:20px;font-size:12px;font-weight:800;cursor:pointer;transition:all .15s;background:rgba(255,255,255,.15);color:rgba(255,255,255,.7)}
+.lang-btn.on{background:#fff;color:var(--indigo)}
+.nav{background:#fff;border-bottom:1px solid var(--s200);position:sticky;top:0;z-index:100;box-shadow:0 1px 8px rgba(0,0,0,.06)}
+.nav-in{max-width:900px;margin:0 auto;padding:0 32px;display:flex;gap:4px;overflow-x:auto}
+.nb{padding:12px 20px;border:none;background:none;cursor:pointer;font-family:var(--font);font-size:13px;font-weight:700;color:var(--s500);border-radius:8px;margin:6px 0;white-space:nowrap;transition:all .15s}
+.nb:hover{background:var(--s100);color:var(--s700)}
+.nb.on{background:var(--indigo);color:#fff;box-shadow:0 2px 8px rgba(79,70,229,.35)}
+.ct{max-width:900px;margin:0 auto;padding:32px}
+.tp{display:none}
+.tp.on{display:block}
+.card{background:#fff;border-radius:20px;border:1px solid var(--s200);padding:24px;margin-bottom:20px;box-shadow:0 1px 4px rgba(0,0,0,.04)}
+.ct-t{font-size:16px;font-weight:900;color:var(--s800);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.obj{background:linear-gradient(135deg,#4f46e5,#7c3aed);color:#fff;border-radius:24px;padding:28px;display:flex;gap:20px;align-items:flex-start;margin-bottom:20px}
+.obj-ico{font-size:40px;flex-shrink:0}
+.obj-t{font-size:18px;font-weight:900;margin-bottom:10px}
+.obj-p{font-size:14px;line-height:1.7;color:rgba(255,255,255,.9)}
+.sc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.sc-i{border-radius:16px;padding:18px;text-align:center;color:#fff}
+.sc-ico{font-size:28px;margin-bottom:8px}
+.sc-lbl{font-size:13px;font-weight:800}
+.sc-pri{font-size:11px;opacity:.75;margin-top:4px}
+.tl-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.tl-i{display:flex;align-items:flex-start;gap:14px;padding:16px;background:var(--s50);border-radius:16px;border:1px solid var(--s100)}
+.tl-ico{font-size:24px;flex-shrink:0}
+.tl-n{font-size:13px;font-weight:800;color:var(--s800);margin-bottom:4px;display:flex;align-items:center;gap:8px}
+.tl-r{font-size:12px;color:var(--s500)}
+.tag{font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px}
+.ta{background:#d1fae5;color:#065f46}
+.tm{background:#fef3c7;color:#92400e}
+.tt{background:#ede9fe;color:#5b21b6}
+.to{background:#dbeafe;color:#1e40af}
+.ch-row{display:grid;grid-template-columns:1fr 1fr;border-radius:14px;overflow:hidden;border:1px solid var(--s200);margin-bottom:10px}
+.ch-p{background:#fff1f2;padding:16px;display:flex;gap:12px}
+.ch-s{background:#f0fdf4;padding:16px;display:flex;gap:12px}
+.ch-lbl{font-size:11px;font-weight:800;margin-bottom:4px}
+.ch-txt{font-size:13px;line-height:1.5}
+.sum{background:linear-gradient(135deg,#1e293b,#0f172a);color:#fff;border-radius:24px;padding:28px;margin-bottom:20px}
+.sum h3{font-size:17px;font-weight:900;margin-bottom:16px}
+.sp{font-size:13px;line-height:1.8;color:rgba(255,255,255,.8);margin-bottom:12px}
+.sp:last-child{margin-bottom:0}
+.hi{color:#a5b4fc;font-weight:700}
+.hg{color:#86efac;font-weight:700}
+.hp{color:#c4b5fd;font-weight:700}
+.farrow{text-align:center;color:var(--indigo);font-size:20px;padding:4px 0}
+.ph-hdr{border-radius:18px 18px 0 0;padding:16px 20px;display:flex;align-items:center;gap:12px;color:#fff}
+.ph-n{background:rgba(255,255,255,.25);border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;flex-shrink:0}
+.ph-t{font-weight:900;font-size:15px}
+.ph-body{border-radius:0 0 18px 18px;padding:16px;border:1px solid;border-top:none;margin-bottom:4px}
+.src-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.src-box{background:#fff;border-radius:14px;padding:14px;border:1px solid var(--s200);box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.src-n{font-size:13px;font-weight:800;color:var(--s800);margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.src-ul{list-style:none}
+.src-ul li{font-size:12px;color:var(--s500);padding:3px 0 3px 12px;position:relative}
+.src-ul li::before{content:"•";position:absolute;left:0;color:var(--s300)}
+.end-nd{display:flex;justify-content:center;margin:8px 0}
+.end-b{background:linear-gradient(135deg,#059669,#16a34a);color:#fff;padding:16px 32px;border-radius:18px;font-weight:900;font-size:15px;box-shadow:0 4px 16px rgba(22,163,74,.3)}
+.start-nd{display:flex;justify-content:center;margin:8px 0 4px}
+.start-b{background:var(--s800);color:#fff;padding:12px 28px;border-radius:30px;font-weight:900;font-size:14px;box-shadow:0 3px 10px rgba(0,0,0,.2)}
+.n8n-card{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:1px solid #6ee7b7;border-radius:20px;padding:24px;margin-top:20px}
+.n8n-t{font-size:15px;font-weight:900;color:#065f46;margin-bottom:16px}
+.n8n-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.n8n-nd{background:#fff;border-radius:14px;padding:14px;border:1px solid #a7f3d0}
+.n8n-s{font-size:11px;font-weight:800;color:#059669;margin:8px 0 4px}
+.n8n-d{font-size:12px;color:var(--s500);line-height:1.5}
+.n8n-ic{font-size:22px}
+.leg{background:#fff;border-radius:16px;padding:18px;border:1px solid var(--s200);margin-top:20px}
+.leg-t{font-size:13px;font-weight:800;color:var(--s600);margin-bottom:12px}
+.leg-tags{display:flex;flex-wrap:wrap;gap:10px}
+.tb-nav{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.tb-nb{padding:8px 16px;border:none;background:var(--s100);color:var(--s600);font-family:var(--font);font-size:12px;font-weight:700;border-radius:20px;cursor:pointer;transition:all .15s}
+.tb-nb:hover{background:var(--s200)}
+.tb-nb.on{background:var(--indigo);color:#fff;box-shadow:0 2px 8px rgba(79,70,229,.3)}
+.at-p{display:none}
+.at-p.on{display:block}
+.at-hdr{color:#fff;border-radius:16px 16px 0 0;padding:16px 20px}
+.at-hdr h3{font-size:15px;font-weight:900}
+.at-hdr p{font-size:12px;opacity:.7;margin-top:4px}
+.ft{width:100%;border-collapse:collapse;font-size:12px}
+.ft th{background:var(--s50);padding:10px 12px;text-align:left;font-weight:700;color:var(--s600);border-bottom:1px solid var(--s200);font-size:11px}
+.ft td{padding:10px 12px;border-bottom:1px solid var(--s100);vertical-align:middle}
+.ft tr:hover td{background:#f8f9ff}
+.fn{font-weight:800;color:var(--s800)}
+.ftype{font-size:11px;font-weight:700;padding:3px 8px;border-radius:8px;white-space:nowrap}
+.ft-a{background:#f1f5f9;color:#475569}
+.ft-t{background:#dbeafe;color:#1e40af}
+.ft-l{background:#e0e7ff;color:#4338ca}
+.ft-s{background:#ede9fe;color:#6d28d9}
+.ft-c{background:#dcfce7;color:#166534}
+.ft-n{background:#ffedd5;color:#9a3412}
+.ft-d{background:#fef9c3;color:#854d0e}
+.ft-u{background:#cffafe;color:#155e75}
+.ft-k{background:#fce7f3;color:#9d174d}
+.ry{color:#dc2626;font-weight:800;font-size:11px}
+.rn{color:var(--s300);font-size:11px}
+.fd{color:var(--s500);font-size:11px}
+.sq{color:var(--s400);font-family:monospace;font-size:11px}
+.tw{border:1px solid var(--s200);border-top:none;border-radius:0 0 16px 16px;overflow:hidden}
+.at-notes{background:#fffbeb;border:1px solid #fde68a;border-radius:18px;padding:22px;margin-top:20px}
+.at-notes h3{font-size:14px;font-weight:900;color:#92400e;margin-bottom:14px}
+.ni{display:flex;gap:10px;margin-bottom:10px;font-size:13px;color:#78350f}
+.nn{font-weight:800;color:#d97706;flex-shrink:0}
+.rq-card{background:#fff1f2;border:1px solid #fecdd3;border-radius:18px;padding:22px;margin-bottom:20px}
+.rq-t{font-size:14px;font-weight:900;color:#9f1239;margin-bottom:14px}
+.rq-ul{list-style:none}
+.rq-ul li{font-size:13px;color:#be123c;padding:5px 0;display:flex;gap:10px}
+.rq-ul li span:first-child{font-weight:800;flex-shrink:0}
+.ch-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:24px}
+.cc{background:#fff;border:1px solid var(--s200);border-radius:18px;padding:18px;box-shadow:0 1px 4px rgba(0,0,0,.04)}
+.cc-hdr{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.cc-ico{font-size:26px}
+.cc-n{font-size:14px;font-weight:900;color:var(--s800)}
+.cc-kw{font-size:12px;color:var(--s500);margin-bottom:10px}
+.cc-kw span{font-weight:700;color:var(--indigo)}
+.cc-tip{font-size:12px;color:#92400e;background:#fef3c7;border-radius:10px;padding:10px 12px}
+.fp{border:2px solid var(--indigo-light);border-radius:20px;overflow:hidden}
+.fp-hdr{background:var(--indigo);color:#fff;padding:18px 22px}
+.fp-hdr h3{font-size:14px;font-weight:900}
+.fp-hdr p{font-size:11px;color:rgba(255,255,255,.7);margin-top:4px}
+.fp-body{padding:22px}
+.fg{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.ff{}
+.ff.full{grid-column:1/-1}
+.fl{font-size:12px;font-weight:800;color:var(--s600);margin-bottom:6px}
+.fl .req{color:#dc2626;margin-left:4px;font-size:11px}
+.fi{border:1px solid var(--s200);border-radius:10px;padding:10px 14px;background:var(--s50);font-size:12px;color:var(--s400);width:100%}
+.fi.tall{min-height:54px}
+.fi.sel{display:flex;justify-content:space-between;align-items:center}
+.sch{background:linear-gradient(135deg,#1e293b,#0f172a);border-radius:20px;padding:24px;margin-top:20px}
+.sch-t{color:#fff;font-size:15px;font-weight:900;margin-bottom:16px}
+.sch-days{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;text-align:center}
+.dl{color:#fff;font-size:12px;font-weight:800;padding:8px;border-radius:10px;margin-bottom:8px}
+.dk{font-size:11px;color:rgba(255,255,255,.6);line-height:1.5}
+footer{border-top:1px solid var(--s200);background:#fff;margin-top:40px}
+footer .in{max-width:900px;margin:0 auto;padding:20px 32px;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--s400)}
+/* Language visibility via body class */
+body.lang-zh [data-lang]:not([data-lang="zh"]),
+body.lang-ko [data-lang]:not([data-lang="ko"]),
+body.lang-en [data-lang]:not([data-lang="en"]) { display:none !important; }
+body.lang-zh [data-lang="zh"],
+body.lang-ko [data-lang="ko"],
+body.lang-en [data-lang="en"] { display:inline; }
+@media(max-width:640px){
+.hdr-in{flex-direction:column}.hdr-stats{display:none}
+.sc-grid{grid-template-columns:repeat(2,1fr)}
+.tl-grid,.src-grid,.n8n-grid,.ch-grid,.fg{grid-template-columns:1fr}
+.ch-row{grid-template-columns:1fr}.sch-days{grid-template-columns:1fr}
+.ct{padding:20px 16px}.hdr{padding:28px 20px}.nav-in{padding:0 16px}
+}
+</style>
+</head>
+<body class="lang-zh">
+
+<div class="hdr">
+  <div class="hdr-in">
+    <div>
+      <div class="lang-sw">
+        <button class="lang-btn on" data-target="zh" onclick="setLang('zh')">中文</button>
+        <button class="lang-btn" data-target="ko" onclick="setLang('ko')">한국어</button>
+        <button class="lang-btn" data-target="en" onclick="setLang('en')">English</button>
+      </div>
+      <div class="badges">
+        <span class="bdg bdg-a" data-lang="zh">工作计划报告</span>
+        <span class="bdg bdg-a" data-lang="ko">업무계획보고서</span>
+        <span class="bdg bdg-a" data-lang="en">Work Plan Report</span>
+        <span class="bdg bdg-b">🔴 <span data-lang="zh">新学期</span><span data-lang="ko">새 학기</span><span data-lang="en">New Semester</span></span>
+      </div>
+      <h1>
+        <span data-lang="zh">韩国高校留学生项目信息收集</span>
+        <span data-lang="ko">한국 대학 유학생 프로그램 정보 수집</span>
+        <span data-lang="en">Korean University Int'l Student Program Data Collection</span>
+      </h1>
+      <p>
+        <span data-lang="zh">工作计划与流程设计报告</span>
+        <span data-lang="ko">업무계획 및 프로세스 설계 보고서</span>
+        <span data-lang="en">Work Plan & Process Design Report</span>
+      </p>
+      <div class="hdr-meta">
+        <span>👤 <strong>Joey (ZHAOJIA)</strong></span>
+        <span>📅 <span data-lang="zh">2026年2月</span><span data-lang="ko">2026년 2월</span><span data-lang="en">February 2026</span></span>
+      </div>
+    </div>
+    <div class="hdr-stats">
+      <div class="stat">
+        <div class="stat-n">6</div>
+        <div class="stat-l"><span data-lang="zh">项目类型</span><span data-lang="ko">프로그램 유형</span><span data-lang="en">Program Types</span></div>
+      </div>
+      <div class="stat">
+        <div class="stat-n">4</div>
+        <div class="stat-l"><span data-lang="zh">数据表</span><span data-lang="ko">데이터 테이블</span><span data-lang="en">Data Tables</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="nav">
+  <div class="nav-in">
+    <button class="nb on" onclick="showTab('ov',this)">
+      📋 <span data-lang="zh">工作概要</span><span data-lang="ko">업무 개요</span><span data-lang="en">Overview</span>
+    </button>
+    <button class="nb" onclick="showTab('fl',this)">
+      🔀 <span data-lang="zh">工作流程图</span><span data-lang="ko">업무 흐름도</span><span data-lang="en">Workflow</span>
+    </button>
+    <button class="nb" onclick="showTab('at',this)">
+      🗄️ <span data-lang="zh">Airtable字段设计</span><span data-lang="ko">Airtable 필드 설계</span><span data-lang="en">Airtable Fields</span>
+    </button>
+    <button class="nb" onclick="showTab('tp',this)">
+      📝 <span data-lang="zh">人工收集模板</span><span data-lang="ko">수동 수집 템플릿</span><span data-lang="en">Manual Collection Template</span>
+    </button>
+  </div>
+</div>
+
+<div class="ct">
+
+<!-- ===== OVERVIEW ===== -->
+<div id="tab-ov" class="tp on">
+  <div class="obj">
+    <div class="obj-ico">🎯</div>
+    <div>
+      <div class="obj-t">
+        <span data-lang="zh">工作目标</span>
+        <span data-lang="ko">업무 목표</span>
+        <span data-lang="en">Work Objective</span>
+      </div>
+      <div class="obj-p">
+        <span data-lang="zh">系统性收集全韩国高校针对中国留学生的合作招生项目信息，建立结构化数据库，借助自动化工具按需产出报告，支持学校国际合作招生决策。</span>
+        <span data-lang="ko">중국인 유학생을 대상으로 한 한국 전체 대학의 협력 모집 프로그램 정보를 체계적으로 수집하고, 구조화된 데이터베이스를 구축하여 자동화 도구로 필요에 따라 보고서를 생성함으로써 국제 협력 모집 의사결정을 지원합니다.</span>
+        <span data-lang="en">Systematically collect information on Korean university partnership enrollment programs for Chinese students, build a structured database, and use automation tools to generate on-demand reports supporting international cooperation recruitment decisions.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ct-t">
+      📊 <span data-lang="zh">收集范围（6类项目，同等优先级）</span>
+      <span data-lang="ko">수집 범위 (6가지 프로그램, 동등 우선순위)</span>
+      <span data-lang="en">Collection Scope (6 Program Types, Equal Priority)</span>
+    </div>
+    <div class="sc-grid">
+      <div class="sc-i" style="background:#4f46e5">
+        <div class="sc-ico">🎓</div>
+        <div class="sc-lbl"><span data-lang="zh">0+4 本科项目</span><span data-lang="ko">0+4 학사과정</span><span data-lang="en">0+4 Undergraduate</span></div>
+        <div class="sc-pri"><span data-lang="zh">全程赴韩就读</span><span data-lang="ko">전 과정 한국 유학</span><span data-lang="en">Full program in Korea</span></div>
+      </div>
+      <div class="sc-i" style="background:#7c3aed">
+        <div class="sc-ico">📚</div>
+        <div class="sc-lbl"><span data-lang="zh">0+2 专升本</span><span data-lang="ko">0+2 전문→학사 편입</span><span data-lang="en">0+2 Diploma-to-Bachelor</span></div>
+        <div class="sc-pri"><span data-lang="zh">专科升本科</span><span data-lang="ko">전문대에서 학사 진학</span><span data-lang="en">College to University</span></div>
+      </div>
+      <div class="sc-i" style="background:#2563eb">
+        <div class="sc-ico">🤝</div>
+        <div class="sc-lbl"><span data-lang="zh">3+1 联合培养</span><span data-lang="ko">3+1 공동 교육과정</span><span data-lang="en">3+1 Joint Program</span></div>
+        <div class="sc-pri"><span data-lang="zh">国内3年+韩国1年</span><span data-lang="ko">중국 3년+한국 1년</span><span data-lang="en">China 3yr + Korea 1yr</span></div>
+      </div>
+      <div class="sc-i" style="background:#0891b2">
+        <div class="sc-ico">🏫</div>
+        <div class="sc-lbl"><span data-lang="zh">1+3 合作本科</span><span data-lang="ko">1+3 협력 학사과정</span><span data-lang="en">1+3 Partnership</span></div>
+        <div class="sc-pri"><span data-lang="zh">国内1年+韩国3年</span><span data-lang="ko">중국 1년+한국 3년</span><span data-lang="en">China 1yr + Korea 3yr</span></div>
+      </div>
+      <div class="sc-i" style="background:#0d9488">
+        <div class="sc-ico">🔬</div>
+        <div class="sc-lbl"><span data-lang="zh">硕士研究生</span><span data-lang="ko">석사 과정</span><span data-lang="en">Master's Programs</span></div>
+        <div class="sc-pri"><span data-lang="zh">1~1.5年制为主</span><span data-lang="ko">주로 1~1.5년제</span><span data-lang="en">Mainly 1–1.5 years</span></div>
+      </div>
+      <div class="sc-i" style="background:#16a34a">
+        <div class="sc-ico">🏆</div>
+        <div class="sc-lbl"><span data-lang="zh">博士项目</span><span data-lang="ko">박사 과정</span><span data-lang="en">Doctoral Programs</span></div>
+        <div class="sc-pri"><span data-lang="zh">2~3年制联合培养</span><span data-lang="ko">2~3년제 공동 지도</span><span data-lang="en">2–3yr Joint Supervision</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ct-t">
+      🛠️ <span data-lang="zh">工具组合方案</span><span data-lang="ko">도구 조합 방안</span><span data-lang="en">Tool Stack</span>
+    </div>
+    <div class="tl-grid">
+      <div class="tl-i">
+        <div class="tl-ico">🗃️</div>
+        <div>
+          <div class="tl-n">Airtable <span class="tag tt"><span data-lang="zh">工具</span><span data-lang="ko">도구</span><span data-lang="en">Tool</span></span></div>
+          <div class="tl-r"><span data-lang="zh">核心数据库 — 存储所有项目信息，按4类项目分表管理</span><span data-lang="ko">핵심 데이터베이스 — 모든 프로그램 정보를 저장하며 4가지 유형별로 테이블 관리</span><span data-lang="en">Core database — stores all program data, managed across 4 project-type tables</span></div>
+        </div>
+      </div>
+      <div class="tl-i">
+        <div class="tl-ico">⚙️</div>
+        <div>
+          <div class="tl-n">n8n <span class="tag ta"><span data-lang="zh">自动化</span><span data-lang="ko">자동화</span><span data-lang="en">Automation</span></span></div>
+          <div class="tl-r"><span data-lang="zh">自动抓取韩国教育部、各高校官网公开政策数据（境外服务器）</span><span data-lang="ko">한국 교육부 및 대학 공식 웹사이트의 정책 데이터를 자동으로 수집 (해외 서버)</span><span data-lang="en">Auto-scrapes public data from Korea's Ministry of Education and university sites (overseas server)</span></div>
+        </div>
+      </div>
+      <div class="tl-i">
+        <div class="tl-ico">👤</div>
+        <div>
+          <div class="tl-n"><span data-lang="zh">人工收集</span><span data-lang="ko">수동 수집</span><span data-lang="en">Manual Collection</span> <span class="tag tm"><span data-lang="zh">人工</span><span data-lang="ko">수동</span><span data-lang="en">Manual</span></span></div>
+          <div class="tl-r"><span data-lang="zh">小红书 / 抖音 / 微信公众号 / 留学中介（中国网络限制需人工操作）</span><span data-lang="ko">샤오홍슈 / 틱톡 / 위챗 공식계정 / 유학 에이전시 (중국 네트워크 제한으로 수동 필요)</span><span data-lang="en">Xiaohongshu / Douyin / WeChat / Study Abroad Agencies (requires manual access due to Chinese network restrictions)</span></div>
+        </div>
+      </div>
+      <div class="tl-i">
+        <div class="tl-ico">🤖</div>
+        <div>
+          <div class="tl-n">Claude Skills <span class="tag to"><span data-lang="zh">输出</span><span data-lang="ko">출력</span><span data-lang="en">Output</span></span></div>
+          <div class="tl-r"><span data-lang="zh">预设报告生成模板，Cowork按需自动产出各类分析报告</span><span data-lang="ko">사전 설정된 보고서 생성 템플릿, Cowork가 필요에 따라 자동으로 다양한 분석 보고서 생성</span><span data-lang="en">Pre-set report generation templates; Cowork auto-generates various analysis reports on demand</span></div>
+        </div>
+      </div>
+      <div class="tl-i">
+        <div class="tl-ico">📌</div>
+        <div>
+          <div class="tl-n">Notion <span class="tag tt"><span data-lang="zh">工具</span><span data-lang="ko">도구</span><span data-lang="en">Tool</span></span></div>
+          <div class="tl-r"><span data-lang="zh">项目进度追踪与任务管理</span><span data-lang="ko">프로젝트 진도 추적 및 작업 관리</span><span data-lang="en">Project progress tracking and task management</span></div>
+        </div>
+      </div>
+      <div class="tl-i">
+        <div class="tl-ico">📊</div>
+        <div>
+          <div class="tl-n">Claude Cowork <span class="tag to"><span data-lang="zh">输出</span><span data-lang="ko">출력</span><span data-lang="en">Output</span></span></div>
+          <div class="tl-r"><span data-lang="zh">读取Airtable数据，按要求格式自动生成最终报告</span><span data-lang="ko">Airtable 데이터를 읽어 요구 형식에 맞게 최종 보고서를 자동 생성</span><span data-lang="en">Reads Airtable data and auto-generates final reports in the required format</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sum">
+    <h3>📑 <span data-lang="zh">报告概要</span><span data-lang="ko">보고서 개요</span><span data-lang="en">Report Summary</span></h3>
+    <p class="sp">
+      <span data-lang="zh">本学期兼职工作的核心任务为：<span class="hi">系统性收集全韩国高校针对中国留学生的合作招生项目信息</span>，涵盖0+4本科、0+2专升本、3+1、1+3联合培养，以及硕士与博士项目，共六类项目。</span>
+      <span data-lang="ko">이번 학기 파트타임 업무의 핵심 과제는 <span class="hi">중국인 유학생을 대상으로 한 한국 전체 대학의 협력 모집 프로그램 정보를 체계적으로 수집</span>하는 것입니다. 0+4 학사, 0+2 전문→학사 편입, 3+1, 1+3 공동 교육과정, 석사 및 박사 과정 등 총 6가지 유형을 포함합니다.</span>
+      <span data-lang="en">The core task for this semester's part-time work is to <span class="hi">systematically collect partnership enrollment program information from Korean universities targeting Chinese students</span>, covering six types: 0+4 undergraduate, 0+2 diploma-to-bachelor, 3+1, 1+3 joint programs, and master's and doctoral programs.</span>
+    </p>
+    <p class="sp">
+      <span data-lang="zh">工作采用<span class="hi">人工+自动化双轨并行</span>的数据收集模式：一方面通过小红书、抖音、公众号、留学中介等渠道人工收集在中国境内才能获取的信息；另一方面利用n8n工作流部署在境外服务器，自动抓取韩国教育部、各高校官方网站等公开数据。</span>
+      <span data-lang="ko">업무는 <span class="hi">수동+자동화 이중 병행</span> 데이터 수집 방식을 채택합니다. 한편으로는 샤오홍슈, 틱톡, 공식계정, 유학 에이전시 등 채널을 통해 중국 국내에서만 접근 가능한 정보를 수동으로 수집하고, 다른 한편으로는 해외 서버에 배포된 n8n 워크플로우를 사용하여 한국 교육부 및 대학 공식 사이트의 공개 데이터를 자동으로 수집합니다.</span>
+      <span data-lang="en">The work adopts a <span class="hi">dual-track manual + automated</span> data collection model: manually gathering information only accessible within China via Xiaohongshu, Douyin, WeChat and study agencies; while simultaneously using n8n workflows deployed on an overseas server to auto-scrape publicly available data from Korea's Ministry of Education and university websites.</span>
+    </p>
+    <p class="sp">
+      <span data-lang="zh">所有数据统一录入<span class="hg">Airtable数据库</span>（按4类项目分表，字段标准化设计），并借助<span class="hp">Claude Skills + Cowork</span>，按需自动产出不同格式的分析报告，大幅提升信息整理与报告产出效率。</span>
+      <span data-lang="ko">모든 데이터는 <span class="hg">Airtable 데이터베이스</span>(4가지 유형별 테이블 분리, 표준화된 필드 설계)에 통합 입력되며, <span class="hp">Claude Skills + Cowork</span>를 활용하여 필요에 따라 다양한 형식의 분석 보고서를 자동으로 생성함으로써 정보 정리 및 보고서 산출 효율을 크게 향상시킵니다.</span>
+      <span data-lang="en">All data is uniformly entered into the <span class="hg">Airtable database</span> (4 separate tables by program type, standardized field design), and <span class="hp">Claude Skills + Cowork</span> are used to automatically generate analysis reports in various formats on demand, significantly improving information organization and report output efficiency.</span>
+    </p>
+  </div>
+</div>
+
+<!-- ===== FLOWCHART ===== -->
+<div id="tab-fl" class="tp">
+  <div class="card" style="margin-bottom:16px">
+    <div class="ct-t"><span data-lang="zh">工作流程总览</span><span data-lang="ko">업무 흐름 총괄</span><span data-lang="en">Workflow Overview</span></div>
+    <p style="font-size:13px;color:var(--s500);margin-top:-8px">
+      <span data-lang="zh">数据流动路径：信息来源 → 标准化整理 → Airtable数据库 → Claude自动报告</span>
+      <span data-lang="ko">데이터 흐름 경로: 정보 출처 → 표준화 정리 → Airtable 데이터베이스 → Claude 자동 보고서</span>
+      <span data-lang="en">Data flow: Sources → Standardization → Airtable Database → Claude Auto Reports</span>
+    </p>
+  </div>
+
+  <div class="start-nd">
+    <div class="start-b">🚀 <span data-lang="zh">工作开始</span><span data-lang="ko">업무 시작</span><span data-lang="en">Start</span></div>
+  </div>
+  <div class="farrow">▼</div>
+
+  <!-- Phase 1 -->
+  <div class="ph-hdr" style="background:linear-gradient(90deg,#4338ca,#6d28d9)">
+    <div class="ph-n">1</div>
+    <div class="ph-t">
+      <span data-lang="zh">第一阶段：信息来源识别与采集</span>
+      <span data-lang="ko">1단계: 정보 출처 파악 및 수집</span>
+      <span data-lang="en">Phase 1: Source Identification & Collection</span>
+    </div>
+  </div>
+  <div class="ph-body" style="background:#eef2ff;border-color:#c7d2fe">
+    <div class="src-grid">
+      <div class="src-box">
+        <div class="src-n">⚙️ n8n <span data-lang="zh">自动抓取</span><span data-lang="ko">자동 수집</span><span data-lang="en">Auto-scrape</span> <span class="tag ta"><span data-lang="zh">自动</span><span data-lang="ko">자동</span><span data-lang="en">Auto</span></span></div>
+        <ul class="src-ul">
+          <li><span data-lang="zh">韩国教育部留学信息网（studyinkorea.go.kr）</span><span data-lang="ko">한국 교육부 유학 정보 사이트 (studyinkorea.go.kr)</span><span data-lang="en">Korea's Study in Korea portal (studyinkorea.go.kr)</span></li>
+          <li><span data-lang="zh">各高校国际处/留学生招生官网</span><span data-lang="ko">각 대학 국제처/유학생 모집 공식 사이트</span><span data-lang="en">University international offices & enrollment websites</span></li>
+          <li><span data-lang="zh">NIIED国家国际教育院政策公告</span><span data-lang="ko">NIIED 국립국제교육원 정책 공지</span><span data-lang="en">NIIED National Institute for International Education policy announcements</span></li>
+        </ul>
+      </div>
+      <div class="src-box">
+        <div class="src-n">👤 <span data-lang="zh">人工收集渠道</span><span data-lang="ko">수동 수집 채널</span><span data-lang="en">Manual Collection Channels</span> <span class="tag tm"><span data-lang="zh">人工</span><span data-lang="ko">수동</span><span data-lang="en">Manual</span></span></div>
+        <ul class="src-ul">
+          <li><span data-lang="zh">小红书（搜索关键词：韩国大学留学、0+4等）</span><span data-lang="ko">샤오홍슈 (검색어: 한국 대학 유학, 0+4 등)</span><span data-lang="en">Xiaohongshu (keywords: Korea university, 0+4, etc.)</span></li>
+          <li><span data-lang="zh">抖音（关注专业留学中介账号）</span><span data-lang="ko">틱톡 (전문 유학 에이전시 계정 팔로우)</span><span data-lang="en">Douyin (follow professional study-abroad agency accounts)</span></li>
+          <li><span data-lang="zh">微信公众号（中韩留学机构）</span><span data-lang="ko">위챗 공식계정 (중한 유학 기관)</span><span data-lang="en">WeChat Official Accounts (China-Korea study agencies)</span></li>
+          <li><span data-lang="zh">直接联系留学中介获取最新资料</span><span data-lang="ko">유학 에이전시에 직접 연락하여 최신 자료 획득</span><span data-lang="en">Directly contacting study abroad agencies for latest materials</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="farrow">▼</div>
+
+  <!-- Phase 2 -->
+  <div class="ph-hdr" style="background:linear-gradient(90deg,#6d28d9,#7c3aed)">
+    <div class="ph-n">2</div>
+    <div class="ph-t">
+      <span data-lang="zh">第二阶段：数据标准化整理</span>
+      <span data-lang="ko">2단계: 데이터 표준화 정리</span>
+      <span data-lang="en">Phase 2: Data Standardization</span>
+    </div>
+  </div>
+  <div class="ph-body" style="background:#f5f3ff;border-color:#ddd6fe">
+    <div class="src-grid">
+      <div class="src-box">
+        <div class="src-n">📋 <span data-lang="zh">人工提交标准模板</span><span data-lang="ko">수동 제출 표준 템플릿</span><span data-lang="en">Manual Submission Template</span> <span class="tag tm"><span data-lang="zh">人工</span><span data-lang="ko">수동</span><span data-lang="en">Manual</span></span></div>
+        <ul class="src-ul">
+          <li><span data-lang="zh">按统一字段填写每条项目信息</span><span data-lang="ko">통일된 필드에 따라 각 프로그램 정보 입력</span><span data-lang="en">Fill each program entry using unified fields</span></li>
+          <li><span data-lang="zh">每周五前提交当周收集数据</span><span data-lang="ko">매주 금요일 전까지 해당 주 수집 데이터 제출</span><span data-lang="en">Submit weekly collected data before every Friday</span></li>
+          <li><span data-lang="zh">附上截图或原始链接作为来源证明</span><span data-lang="ko">스크린샷 또는 원본 링크를 출처 증빙으로 첨부</span><span data-lang="en">Attach screenshots or original links as source evidence</span></li>
+        </ul>
+      </div>
+      <div class="src-box">
+        <div class="src-n">⚙️ n8n <span data-lang="zh">数据清洗</span><span data-lang="ko">데이터 정제</span><span data-lang="en">Data Cleaning</span> <span class="tag ta"><span data-lang="zh">自动</span><span data-lang="ko">자동</span><span data-lang="en">Auto</span></span></div>
+        <ul class="src-ul">
+          <li><span data-lang="zh">自动格式化抓取到的原始数据</span><span data-lang="ko">수집된 원시 데이터를 자동으로 형식화</span><span data-lang="en">Auto-format raw scraped data</span></li>
+          <li><span data-lang="zh">去重处理与字段映射规则</span><span data-lang="ko">중복 제거 처리 및 필드 매핑 규칙</span><span data-lang="en">Deduplication and field mapping rules</span></li>
+          <li><span data-lang="zh">通过Airtable API自动写入数据库</span><span data-lang="ko">Airtable API를 통해 데이터베이스에 자동 기록</span><span data-lang="en">Auto-write to database via Airtable API</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="farrow">▼</div>
+
+  <!-- Phase 3 -->
+  <div class="ph-hdr" style="background:linear-gradient(90deg,#1d4ed8,#2563eb)">
+    <div class="ph-n">3</div>
+    <div class="ph-t">
+      <span data-lang="zh">第三阶段：Airtable 数据库统一存储</span>
+      <span data-lang="ko">3단계: Airtable 데이터베이스 통합 저장</span>
+      <span data-lang="en">Phase 3: Unified Airtable Database Storage</span>
+    </div>
+  </div>
+  <div class="ph-body" style="background:#eff6ff;border-color:#bfdbfe">
+    <div class="src-box" style="max-width:100%">
+      <div class="src-n">🗄️ Airtable <span data-lang="zh">统一数据库</span><span data-lang="ko">통합 데이터베이스</span><span data-lang="en">Unified Database</span> <span class="tag tt"><span data-lang="zh">工具</span><span data-lang="ko">도구</span><span data-lang="en">Tool</span></span></div>
+      <ul class="src-ul" style="columns:2;column-gap:24px">
+        <li><span data-lang="zh">Table 1：本科合作项目（0+4/3+1/1+3）</span><span data-lang="ko">Table 1: 학사 협력 프로그램 (0+4/3+1/1+3)</span><span data-lang="en">Table 1: Undergrad Partnership Programs (0+4/3+1/1+3)</span></li>
+        <li><span data-lang="zh">Table 2：专升本项目（0+2/插班）</span><span data-lang="ko">Table 2: 전문→학사 편입 프로그램 (0+2/편입)</span><span data-lang="en">Table 2: Diploma-to-Bachelor Programs (0+2/Transfer)</span></li>
+        <li><span data-lang="zh">Table 3：硕士研究生项目</span><span data-lang="ko">Table 3: 석사 과정</span><span data-lang="en">Table 3: Master's Programs</span></li>
+        <li><span data-lang="zh">Table 4：博士项目</span><span data-lang="ko">Table 4: 박사 과정</span><span data-lang="en">Table 4: Doctoral Programs</span></li>
+        <li><span data-lang="zh">字段标准化，数据状态标注管理</span><span data-lang="ko">필드 표준화, 데이터 상태 표시 관리</span><span data-lang="en">Standardized fields, data status labeling</span></li>
+        <li><span data-lang="zh">支持多维度筛选视图与质量核查</span><span data-lang="ko">다차원 필터 뷰 및 품질 검사 지원</span><span data-lang="en">Supports multi-dimensional filter views and quality checks</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="farrow">▼</div>
+
+  <!-- Phase 4 -->
+  <div class="ph-hdr" style="background:linear-gradient(90deg,#0d9488,#059669)">
+    <div class="ph-n">4</div>
+    <div class="ph-t">
+      <span data-lang="zh">第四阶段：Claude 自动报告生成</span>
+      <span data-lang="ko">4단계: Claude 자동 보고서 생성</span>
+      <span data-lang="en">Phase 4: Claude Auto Report Generation</span>
+    </div>
+  </div>
+  <div class="ph-body" style="background:#f0fdfa;border-color:#99f6e4">
+    <div class="src-box" style="max-width:100%">
+      <div class="src-n">🤖 Claude Skills + Cowork <span class="tag to"><span data-lang="zh">输出</span><span data-lang="ko">출력</span><span data-lang="en">Output</span></span></div>
+      <ul class="src-ul" style="columns:2;column-gap:24px">
+        <li><span data-lang="zh">调用预设的报告生成Skill模板</span><span data-lang="ko">사전 설정된 보고서 생성 Skill 템플릿 호출</span><span data-lang="en">Invoke preset report generation Skill templates</span></li>
+        <li><span data-lang="zh">Claude Cowork读取Airtable数据</span><span data-lang="ko">Claude Cowork가 Airtable 데이터 읽기</span><span data-lang="en">Claude Cowork reads Airtable data</span></li>
+        <li><span data-lang="zh">按要求格式输出汇总/对比/学校档案</span><span data-lang="ko">요구 형식에 따라 요약/비교/학교 프로파일 출력</span><span data-lang="en">Output summaries / comparisons / school profiles as required</span></li>
+        <li><span data-lang="zh">支持中文/韩文/英文多语言报告</span><span data-lang="ko">중국어/한국어/영어 다국어 보고서 지원</span><span data-lang="en">Supports Chinese / Korean / English multilingual reports</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="farrow">▼</div>
+
+  <div class="end-nd">
+    <div class="end-b">
+      📊 <span data-lang="zh">产出最终留学项目分析报告</span><span data-lang="ko">최종 유학 프로그램 분석 보고서 산출</span><span data-lang="en">Final Study Program Analysis Report</span>
+    </div>
+  </div>
+
+  <div class="leg">
+    <div class="leg-t"><span data-lang="zh">图例说明</span><span data-lang="ko">범례 설명</span><span data-lang="en">Legend</span></div>
+    <div class="leg-tags">
+      <span class="tag ta" style="font-size:12px;padding:5px 12px">⚙️ <span data-lang="zh">自动化处理（n8n）</span><span data-lang="ko">자동화 처리 (n8n)</span><span data-lang="en">Automated (n8n)</span></span>
+      <span class="tag tm" style="font-size:12px;padding:5px 12px">👤 <span data-lang="zh">人工操作</span><span data-lang="ko">수동 작업</span><span data-lang="en">Manual</span></span>
+      <span class="tag tt" style="font-size:12px;padding:5px 12px">🔧 <span data-lang="zh">工具平台</span><span data-lang="ko">도구 플랫폼</span><span data-lang="en">Tool Platform</span></span>
+      <span class="tag to" style="font-size:12px;padding:5px 12px">📤 <span data-lang="zh">输出成果</span><span data-lang="ko">출력 결과물</span><span data-lang="en">Output</span></span>
+    </div>
+  </div>
+
+  <div class="n8n-card">
+    <div class="n8n-t">⚙️ n8n <span data-lang="zh">自动化工作流节点设计</span><span data-lang="ko">자동화 워크플로우 노드 설계</span><span data-lang="en">Automation Workflow Node Design</span></div>
+    <div class="n8n-grid">
+      <div class="n8n-nd">
+        <div class="n8n-ic">⏰</div>
+        <div class="n8n-s"><span data-lang="zh">1. 定时触发器</span><span data-lang="ko">1. 예약 트리거</span><span data-lang="en">1. Scheduled Trigger</span></div>
+        <div class="n8n-d"><span data-lang="zh">每周一9:00自动触发，或支持手动触发执行</span><span data-lang="ko">매주 월요일 9:00 자동 실행, 또는 수동 실행 지원</span><span data-lang="en">Auto-triggers every Monday at 9:00, or supports manual execution</span></div>
+      </div>
+      <div class="n8n-nd">
+        <div class="n8n-ic">🌐</div>
+        <div class="n8n-s"><span data-lang="zh">2. HTTP请求节点</span><span data-lang="ko">2. HTTP 요청 노드</span><span data-lang="en">2. HTTP Request Node</span></div>
+        <div class="n8n-d"><span data-lang="zh">抓取韩国教育部、高校国际处官网公开信息</span><span data-lang="ko">한국 교육부 및 대학 국제처 공식 사이트 공개 정보 수집</span><span data-lang="en">Scrapes public info from Korea's Ministry of Education and university international offices</span></div>
+      </div>
+      <div class="n8n-nd">
+        <div class="n8n-ic">🧹</div>
+        <div class="n8n-s"><span data-lang="zh">3. 数据清洗节点</span><span data-lang="ko">3. 데이터 정제 노드</span><span data-lang="en">3. Data Cleaning Node</span></div>
+        <div class="n8n-d"><span data-lang="zh">格式化数据、去重处理、字段映射至Airtable规范</span><span data-lang="ko">데이터 형식화, 중복 제거, Airtable 기준으로 필드 매핑</span><span data-lang="en">Format data, deduplicate, map fields to Airtable standards</span></div>
+      </div>
+      <div class="n8n-nd">
+        <div class="n8n-ic">📥</div>
+        <div class="n8n-s"><span data-lang="zh">4. Airtable写入</span><span data-lang="ko">4. Airtable 기록</span><span data-lang="en">4. Airtable Write</span></div>
+        <div class="n8n-d"><span data-lang="zh">通过Airtable API自动写入对应数据表字段</span><span data-lang="ko">Airtable API를 통해 해당 데이터 테이블 필드에 자동 기록</span><span data-lang="en">Auto-writes to corresponding Airtable table fields via API</span></div>
+      </div>
+      <div class="n8n-nd">
+        <div class="n8n-ic">🔔</div>
+        <div class="n8n-s"><span data-lang="zh">5. 通知节点</span><span data-lang="ko">5. 알림 노드</span><span data-lang="en">5. Notification Node</span></div>
+        <div class="n8n-d"><span data-lang="zh">录入完成后发送微信/邮件通知负责人</span><span data-lang="ko">입력 완료 후 위챗/이메일로 담당자에게 알림 발송</span><span data-lang="en">Sends WeChat/email notification to responsible person upon completion</span></div>
+      </div>
+      <div class="n8n-nd">
+        <div class="n8n-ic">⚠️</div>
+        <div class="n8n-s"><span data-lang="zh">6. 错误处理</span><span data-lang="ko">6. 오류 처리</span><span data-lang="en">6. Error Handling</span></div>
+        <div class="n8n-d"><span data-lang="zh">抓取失败时记录错误日志并发送告警通知</span><span data-lang="ko">수집 실패 시 오류 로그 기록 및 경보 알림 발송</span><span data-lang="en">Logs errors and sends alert notifications when scraping fails</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== AIRTABLE ===== -->
+<div id="tab-at" class="tp">
+  <div class="card" style="margin-bottom:16px">
+    <div class="ct-t">Airtable <span data-lang="zh">字段设计方案</span><span data-lang="ko">필드 설계 방안</span><span data-lang="en">Field Design Plan</span></div>
+    <p style="font-size:13px;color:var(--s500);margin-top:-8px">
+      <span data-lang="zh">参考现有Excel文件字段结构，整合优化为4张数据表。兼顾数据完整性与录入效率。</span>
+      <span data-lang="ko">기존 Excel 파일의 필드 구조를 참조하여 4개의 데이터 테이블로 통합 최적화. 데이터 완전성과 입력 효율을 모두 고려.</span>
+      <span data-lang="en">Based on existing Excel field structure, consolidated and optimized into 4 data tables. Balances data completeness with entry efficiency.</span>
+    </p>
+  </div>
+  <div class="tb-nav">
+    <button class="tb-nb on" onclick="showAt('a1',this)">📘 <span data-lang="zh">Table 1：本科合作项目</span><span data-lang="ko">Table 1: 학사 협력</span><span data-lang="en">Table 1: Undergrad</span></button>
+    <button class="tb-nb" onclick="showAt('a2',this)">📗 <span data-lang="zh">Table 2：专升本项目</span><span data-lang="ko">Table 2: 전문→학사</span><span data-lang="en">Table 2: Diploma-to-Bach</span></button>
+    <button class="tb-nb" onclick="showAt('a3',this)">📙 <span data-lang="zh">Table 3：硕士研究生</span><span data-lang="ko">Table 3: 석사</span><span data-lang="en">Table 3: Master's</span></button>
+    <button class="tb-nb" onclick="showAt('a4',this)">📕 <span data-lang="zh">Table 4：博士项目</span><span data-lang="ko">Table 4: 박사</span><span data-lang="en">Table 4: Doctoral</span></button>
+  </div>
+
+  <div id="at-a1" class="at-p on">
+    <div class="at-hdr" style="background:#4f46e5">
+      <h3>📘 <span data-lang="zh">Table 1：本科合作项目（0+4 / 3+1 / 1+3）</span><span data-lang="ko">Table 1: 학사 협력 프로그램 (0+4 / 3+1 / 1+3)</span><span data-lang="en">Table 1: Undergraduate Partnership Programs (0+4 / 3+1 / 1+3)</span></h3>
+      <p><span data-lang="zh">20 个字段 · 7 个必填</span><span data-lang="ko">20개 필드 · 7개 필수</span><span data-lang="en">20 fields · 7 required</span></p>
+    </div>
+    <div class="tw">
+      <table class="ft">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th><span data-lang="zh">字段名称</span><span data-lang="ko">필드명</span><span data-lang="en">Field Name</span></th>
+            <th><span data-lang="zh">Airtable类型</span><span data-lang="ko">Airtable 유형</span><span data-lang="en">Airtable Type</span></th>
+            <th><span data-lang="zh">说明</span><span data-lang="ko">설명</span><span data-lang="en">Description</span></th>
+            <th><span data-lang="zh">必填</span><span data-lang="ko">필수</span><span data-lang="en">Required</span></th>
+          </tr>
+        </thead>
+        <tbody id="b1"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div id="at-a2" class="at-p">
+    <div class="at-hdr" style="background:#7c3aed">
+      <h3>📗 <span data-lang="zh">Table 2：专升本项目（0+2 / 插班）</span><span data-lang="ko">Table 2: 전문→학사 편입 프로그램 (0+2 / 편입)</span><span data-lang="en">Table 2: Diploma-to-Bachelor Programs (0+2 / Transfer)</span></h3>
+      <p><span data-lang="zh">21 个字段 · 7 个必填</span><span data-lang="ko">21개 필드 · 7개 필수</span><span data-lang="en">21 fields · 7 required</span></p>
+    </div>
+    <div class="tw"><table class="ft"><thead><tr><th>#</th><th><span data-lang="zh">字段名称</span><span data-lang="ko">필드명</span><span data-lang="en">Field Name</span></th><th>Type</th><th><span data-lang="zh">说明</span><span data-lang="ko">설명</span><span data-lang="en">Desc</span></th><th><span data-lang="zh">必填</span><span data-lang="ko">필수</span><span data-lang="en">Req</span></th></tr></thead><tbody id="b2"></tbody></table></div>
+  </div>
+
+  <div id="at-a3" class="at-p">
+    <div class="at-hdr" style="background:#0d9488">
+      <h3>📙 <span data-lang="zh">Table 3：硕士研究生项目</span><span data-lang="ko">Table 3: 석사 과정</span><span data-lang="en">Table 3: Master's Programs</span></h3>
+      <p><span data-lang="zh">23 个字段 · 8 个必填</span><span data-lang="ko">23개 필드 · 8개 필수</span><span data-lang="en">23 fields · 8 required</span></p>
+    </div>
+    <div class="tw"><table class="ft"><thead><tr><th>#</th><th><span data-lang="zh">字段名称</span><span data-lang="ko">필드명</span><span data-lang="en">Field Name</span></th><th>Type</th><th><span data-lang="zh">说明</span><span data-lang="ko">설명</span><span data-lang="en">Desc</span></th><th><span data-lang="zh">必填</span><span data-lang="ko">필수</span><span data-lang="en">Req</span></th></tr></thead><tbody id="b3"></tbody></table></div>
+  </div>
+
+  <div id="at-a4" class="at-p">
+    <div class="at-hdr" style="background:#e11d48">
+      <h3>📕 <span data-lang="zh">Table 4：博士项目</span><span data-lang="ko">Table 4: 박사 과정</span><span data-lang="en">Table 4: Doctoral Programs</span></h3>
+      <p><span data-lang="zh">21 个字段 · 8 个必填</span><span data-lang="ko">21개 필드 · 8개 필수</span><span data-lang="en">21 fields · 8 required</span></p>
+    </div>
+    <div class="tw"><table class="ft"><thead><tr><th>#</th><th><span data-lang="zh">字段名称</span><span data-lang="ko">필드명</span><span data-lang="en">Field Name</span></th><th>Type</th><th><span data-lang="zh">说明</span><span data-lang="ko">설명</span><span data-lang="en">Desc</span></th><th><span data-lang="zh">必填</span><span data-lang="ko">필수</span><span data-lang="en">Req</span></th></tr></thead><tbody id="b4"></tbody></table></div>
+  </div>
+
+  <div class="at-notes">
+    <h3>📌 Airtable <span data-lang="zh">建库注意事项</span><span data-lang="ko">데이터베이스 구축 주의사항</span><span data-lang="en">Database Setup Notes</span></h3>
+    <div class="ni"><span class="nn">1.</span><span><span data-lang="zh">新建一个 Base 命名为「韩国高校留学项目数据库」，4张Table分别对应4种项目类型</span><span data-lang="ko">「한국 대학 유학 프로그램 데이터베이스」라는 Base를 생성하고, 4개의 Table이 각각 4가지 프로그램 유형에 해당</span><span data-lang="en">Create a Base named "Korean University Study Program Database" with 4 Tables for the 4 program types</span></span></div>
+    <div class="ni"><span class="nn">2.</span><span><span data-lang="zh">「数据状态」使用 Single Select，颜色区分：待核实（黄）、已确认（绿）、已过期（红）</span><span data-lang="ko">「데이터 상태」는 Single Select 사용, 색상 구분: 미검증(노랑), 확인됨(초록), 만료됨(빨강)</span><span data-lang="en">"Data Status" uses Single Select with color coding: Pending (yellow), Confirmed (green), Expired (red)</span></span></div>
+    <div class="ni"><span class="nn">3.</span><span><span data-lang="zh">「信息来源」建议选项：官方官网、小红书、抖音、微信公众号、中介提供、n8n自动抓取</span><span data-lang="ko">「정보 출처」 권장 옵션: 공식 웹사이트, 샤오홍슈, 틱톡, 위챗 공식계정, 에이전시 제공, n8n 자동 수집</span><span data-lang="en">"Info Source" recommended options: Official Website, Xiaohongshu, Douyin, WeChat, Agency, n8n Auto-scrape</span></span></div>
+    <div class="ni"><span class="nn">4.</span><span><span data-lang="zh">建议设置多个 Views：按学校筛选 / 按项目模式筛选 / 待核实数据视图 / 本周新增视图</span><span data-lang="ko">여러 Views 설정 권장: 학교별 필터 / 프로그램 유형별 / 미검증 데이터 / 이번 주 신규 추가</span><span data-lang="en">Recommend multiple Views: by university / by program type / pending verification / added this week</span></span></div>
+    <div class="ni"><span class="nn">5.</span><span><span data-lang="zh">开启 Airtable Automations：新记录添加时，自动发邮件通知负责人核实数据</span><span data-lang="ko">Airtable Automations 활성화: 새 레코드 추가 시 자동으로 담당자에게 이메일 발송하여 데이터 검증 요청</span><span data-lang="en">Enable Airtable Automations: auto-email responsible person to verify data when a new record is added</span></span></div>
+    <div class="ni"><span class="nn">6.</span><span><span data-lang="zh">「授课语言」选项：中文授课、韩文授课、双语（中韩）、英文授课、双语（中英）</span><span data-lang="ko">「수업 언어」 옵션: 중국어 강의, 한국어 강의, 이중언어(중한), 영어 강의, 이중언어(중영)</span><span data-lang="en">"Instruction Language" options: Chinese, Korean, Bilingual (CN-KR), English, Bilingual (CN-EN)</span></span></div>
+  </div>
+</div>
+
+<!-- ===== MANUAL COLLECTION TEMPLATE ===== -->
+<div id="tab-tp" class="tp">
+  <div class="rq-card">
+    <div class="rq-t">⚠️ <span data-lang="zh">人工数据提交要求</span><span data-lang="ko">수동 데이터 제출 요건</span><span data-lang="en">Manual Data Submission Requirements</span></div>
+    <ul class="rq-ul">
+      <li><span>1.</span><span><span data-lang="zh">每条项目信息独立填写，不同学校/项目不合并在一行</span><span data-lang="ko">각 프로그램 정보를 개별 입력, 다른 학교/프로그램을 한 행에 합치지 않음</span><span data-lang="en">Enter each program separately; do not combine different schools/programs in one row</span></span></li>
+      <li><span>2.</span><span><span data-lang="zh">截图或原始链接必须附上（填入「相关链接」或「备注」字段）</span><span data-lang="ko">스크린샷 또는 원본 링크를 반드시 첨부 (「관련 링크」 또는 「비고」 필드에 입력)</span><span data-lang="en">Screenshots or original links must be attached (enter in "Related Link" or "Notes" field)</span></span></li>
+      <li><span>3.</span><span><span data-lang="zh">信息模糊或未经核实的标注「待核实」，确认无误后改为「已确认」</span><span data-lang="ko">불명확하거나 미검증 정보는 「미검증」으로 표시, 확인 후 「확인됨」으로 변경</span><span data-lang="en">Mark unclear or unverified info as "Pending"; change to "Confirmed" after verification</span></span></li>
+      <li><span>4.</span><span><span data-lang="zh">每周五 17:00 前提交当周收集到的数据至 Airtable</span><span data-lang="ko">매주 금요일 17:00 이전에 해당 주 수집 데이터를 Airtable에 제출</span><span data-lang="en">Submit weekly collected data to Airtable before 17:00 every Friday</span></span></li>
+      <li><span>5.</span><span><span data-lang="zh">信息来源必须明确标注，如：小红书@账号名 / XX留学中介</span><span data-lang="ko">정보 출처를 명확히 표시, 예: 샤오홍슈@계정명 / XX 유학 에이전시</span><span data-lang="en">Clearly note the source, e.g.: Xiaohongshu@username / XX Study Agency</span></span></li>
+    </ul>
+  </div>
+
+  <div class="ch-grid">
+    <div class="cc">
+      <div class="cc-hdr"><div class="cc-ico">📱</div><div class="cc-n"><span data-lang="zh">小红书</span><span data-lang="ko">샤오홍슈</span><span data-lang="en">Xiaohongshu</span></div></div>
+      <div class="cc-kw"><span data-lang="zh"><span>搜索关键词：</span>韩国大学留学、韩国硕士、0+4韩国、专升本韩国、韩国博士联培</span><span data-lang="ko"><span>검색어: </span>한국대학유학, 한국석사, 0+4한국, 전문한국, 한국박사공동지도</span><span data-lang="en"><span>Search keywords: </span>Korean university study, Korea master's, 0+4 Korea, transfer Korea, Korea PhD joint</span></div>
+      <div class="cc-tip">💡 <span data-lang="zh">注意区分广告和真实分享；重要信息截图保存作为来源证明</span><span data-lang="ko">광고와 실제 공유를 구분; 중요 정보는 스크린샷으로 저장하여 출처 증빙으로 활용</span><span data-lang="en">Distinguish ads from genuine posts; screenshot important info as source evidence</span></div>
+    </div>
+    <div class="cc">
+      <div class="cc-hdr"><div class="cc-ico">🎵</div><div class="cc-n"><span data-lang="zh">抖音</span><span data-lang="ko">틱톡 (抖音)</span><span data-lang="en">Douyin/TikTok</span></div></div>
+      <div class="cc-kw"><span data-lang="zh"><span>搜索关键词：</span>韩国留学中介、韩国大学合作项目、韩国研究生招生</span><span data-lang="ko"><span>검색어: </span>한국유학에이전시, 한국대학협력프로그램, 한국대학원모집</span><span data-lang="en"><span>Keywords: </span>Korea study agency, Korean university cooperation, Korea graduate admission</span></div>
+      <div class="cc-tip">💡 <span data-lang="zh">优先关注粉丝10万以上的专业留学账号，信息可靠性较高</span><span data-lang="ko">팔로워 10만 이상의 전문 유학 계정을 우선 팔로우, 정보 신뢰도가 높음</span><span data-lang="en">Prioritize professional study-abroad accounts with 100k+ followers for reliability</span></div>
+    </div>
+    <div class="cc">
+      <div class="cc-hdr"><div class="cc-ico">📰</div><div class="cc-n"><span data-lang="zh">微信公众号</span><span data-lang="ko">위챗 공식계정</span><span data-lang="en">WeChat Official Accounts</span></div></div>
+      <div class="cc-kw"><span data-lang="zh"><span>搜索关键词：</span>韩国留学、中韩联培、韩国硕博项目、韩国大学招生2025</span><span data-lang="ko"><span>검색어: </span>한국유학, 중한공동과정, 한국석박프로그램, 한국대학모집2025</span><span data-lang="en"><span>Keywords: </span>Korea study, China-Korea joint, Korea master/PhD, Korean university 2025</span></div>
+      <div class="cc-tip">💡 <span data-lang="zh">重点关注有正规资质的中介机构公众号，官方通知类信息优先</span><span data-lang="ko">정식 자격을 갖춘 에이전시의 공식계정에 집중, 공식 공지 유형의 정보를 우선시</span><span data-lang="en">Focus on licensed agency accounts; prioritize official announcement-type information</span></div>
+    </div>
+    <div class="cc">
+      <div class="cc-hdr"><div class="cc-ico">🤝</div><div class="cc-n"><span data-lang="zh">留学中介</span><span data-lang="ko">유학 에이전시</span><span data-lang="en">Study Abroad Agencies</span></div></div>
+      <div class="cc-kw"><span data-lang="zh"><span>方式：</span>直接电话/微信咨询各主要中韩留学中介机构</span><span data-lang="ko"><span>방법: </span>주요 중한 유학 에이전시에 직접 전화/위챗으로 문의</span><span data-lang="en"><span>Method: </span>Directly call/WeChat major China-Korea study abroad agencies</span></div>
+      <div class="cc-tip">💡 <span data-lang="zh">询问最新合作项目，要求提供官方合同/招生简章等正式资料</span><span data-lang="ko">최신 협력 프로그램을 문의하고 공식 계약서/모집 요강 등 정식 자료 요청</span><span data-lang="en">Ask about latest partnership programs; request official contracts/enrollment brochures</span></div>
+    </div>
+  </div>
+
+  <div class="fp">
+    <div class="fp-hdr">
+      <h3>📋 <span data-lang="zh">人工收集数据提交模板（本科/专升本合作项目示例）</span><span data-lang="ko">수동 수집 데이터 제출 템플릿 (학사/전문→학사 협력 프로그램 예시)</span><span data-lang="en">Manual Data Submission Template (Undergrad/Diploma-to-Bach Example)</span></h3>
+      <p><span data-lang="zh">每次收集到信息后，按此格式填写并录入 Airtable，或整理后发送给数据录入员</span><span data-lang="ko">정보를 수집할 때마다 이 형식으로 작성하여 Airtable에 입력하거나, 정리 후 데이터 입력 담당자에게 전송</span><span data-lang="en">After each collection, fill in this format and enter into Airtable, or organize and send to data entry staff</span></p>
+    </div>
+    <div class="fp-body">
+      <div class="fg">
+        <div class="ff"><div class="fl"><span data-lang="zh">高校名称</span><span data-lang="ko">대학명</span><span data-lang="en">University Name</span><span class="req"><span data-lang="zh">必填</span><span data-lang="ko">필수</span><span data-lang="en">Required</span></span></div><div class="fi"><span data-lang="zh">如：又松大学 / 우송대학교</span><span data-lang="ko">예: 우송대학교 / 又松大学</span><span data-lang="en">e.g.: Woosong University / 우송대학교</span></div></div>
+        <div class="ff"><div class="fl"><span data-lang="zh">所在城市</span><span data-lang="ko">소재 도시</span><span data-lang="en">City</span><span class="req"><span data-lang="zh">必填</span><span data-lang="ko">필수</span><span data-lang="en">Req</span></span></div><div class="fi"><span data-lang="zh">如：大田 / 首尔 / 釜山</span><span data-lang="ko">예: 대전 / 서울 / 부산</span><span data-lang="en">e.g.: Daejeon / Seoul / Busan</span></div></div>
+        <div class="ff"><div class="fl"><span data-lang="zh">项目模式</span><span data-lang="ko">프로그램 유형</span><span data-lang="en">Program Mode</span><span class="req"><span data-lang="zh">必填</span><span data-lang="ko">필수</span><span data-lang="en">Req</span></span></div><div class="fi sel"><span data-lang="zh">选择：0+4 / 3+1 / 1+3 / 0+2</span><span data-lang="ko">선택: 0+4 / 3+1 / 1+3 / 0+2</span><span data-lang="en">Select: 0+4 / 3+1 / 1+3 / 0+2</span> <span>▼</span></div></div>
+        <div class="ff"><div class="fl"><span data-lang="zh">中方合作院校</span><span data-lang="ko">중국 협력 대학</span><span data-lang="en">Chinese Partner University</span></div><div class="fi"><span data-lang="zh">如：西安外国语大学 / 山东交通学院</span><span data-lang="ko">예: 시안외국어대학 / 산둥교통학원</span><span data-lang="en">e.g.: Xi'an International Studies Univ.</span></div></div>
+        <div class="ff full"><div class="fl"><span data-lang="zh">可招生专业</span><span data-lang="ko">모집 가능 전공</span><span data-lang="en">Available Majors</span><span class="req"><span data-lang="zh">必填</span><span data-lang="ko">필수</span><span data-lang="en">Req</span></span></div><div class="fi tall"><span data-lang="zh">如：工商管理、计算机科学、艺术设计、国际贸易...</span><span data-lang="ko">예: 경영학, 컴퓨터공학, 예술디자인, 국제무역...</span><span data-lang="en">e.g.: Business Admin, Computer Science, Art Design, International Trade...</span></div></div>
+        <div class="ff full"><div class="fl"><span data-lang="zh">学费信息</span><span data-lang="ko">학비 정보</span><span data-lang="en">Tuition Info</span><span class="req"><span data-lang="zh">必填</span><span data-lang="ko">필수</span><span data-lang="en">Req</span></span></div><div class="fi tall"><span data-lang="zh">国内阶段：X元/年；韩国阶段：X韩元/学期</span><span data-lang="ko">중국 단계: X원/년; 한국 단계: X원/학기</span><span data-lang="en">China phase: X CNY/yr; Korea phase: X KRW/semester</span></div></div>
+        <div class="ff full"><div class="fl"><span data-lang="zh">奖学金政策</span><span data-lang="ko">장학금 정책</span><span data-lang="en">Scholarship Policy</span></div><div class="fi tall"><span data-lang="zh">如：TOPIK4级以上减免30%；GPA3.5以上减免50%...</span><span data-lang="ko">예: TOPIK 4급 이상 30% 감면; GPA 3.5 이상 50% 감면...</span><span data-lang="en">e.g.: TOPIK Level 4+ = 30% off; GPA 3.5+ = 50% off...</span></div></div>
+        <div class="ff"><div class="fl"><span data-lang="zh">信息来源</span><span data-lang="ko">정보 출처</span><span data-lang="en">Info Source</span><span class="req"><span data-lang="zh">必填</span><span data-lang="ko">필수</span><span data-lang="en">Req</span></span></div><div class="fi"><span data-lang="zh">如：小红书@XXX / XX留学中介</span><span data-lang="ko">예: 샤오홍슈@XXX / XX 유학에이전시</span><span data-lang="en">e.g.: Xiaohongshu@XXX / XX Study Agency</span></div></div>
+        <div class="ff"><div class="fl"><span data-lang="zh">数据状态</span><span data-lang="ko">데이터 상태</span><span data-lang="en">Data Status</span><span class="req"><span data-lang="zh">必填</span><span data-lang="ko">필수</span><span data-lang="en">Req</span></span></div><div class="fi sel"><span data-lang="zh">选择：待核实 / 已确认</span><span data-lang="ko">선택: 미검증 / 확인됨</span><span data-lang="en">Select: Pending / Confirmed</span> <span>▼</span></div></div>
+        <div class="ff full"><div class="fl"><span data-lang="zh">原始链接/截图文件名</span><span data-lang="ko">원본 링크/스크린샷 파일명</span><span data-lang="en">Source Link / Screenshot Filename</span></div><div class="fi"><span data-lang="zh">粘贴链接，或填写截图文件名（如：2026_0214_又松大学.png）</span><span data-lang="ko">링크 붙여넣기 또는 스크린샷 파일명 입력 (예: 2026_0214_우송대.png)</span><span data-lang="en">Paste link or enter screenshot filename (e.g.: 2026_0214_Woosong.png)</span></div></div>
+        <div class="ff full"><div class="fl"><span data-lang="zh">备注</span><span data-lang="ko">비고</span><span data-lang="en">Notes</span></div><div class="fi tall"><span data-lang="zh">其他需要补充的信息、特殊情况说明...</span><span data-lang="ko">기타 보충 정보, 특수 상황 설명...</span><span data-lang="en">Any additional information, special circumstances...</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sch">
+    <div class="sch-t">📅 <span data-lang="zh">建议工作节奏</span><span data-lang="ko">권장 업무 리듬</span><span data-lang="en">Recommended Work Rhythm</span></div>
+    <div class="sch-days">
+      <div>
+        <div class="dl" style="background:#4f46e5"><span data-lang="zh">周一</span><span data-lang="ko">월요일</span><span data-lang="en">Monday</span></div>
+        <div class="dk"><span data-lang="zh">查看新任务<br>分配收集渠道</span><span data-lang="ko">신규 작업 확인<br>수집 채널 배정</span><span data-lang="en">Review tasks<br>Assign channels</span></div>
+      </div>
+      <div>
+        <div class="dl" style="background:#2563eb"><span data-lang="zh">周二~三</span><span data-lang="ko">화~수</span><span data-lang="en">Tue–Wed</span></div>
+        <div class="dk"><span data-lang="zh">人工渠道<br>信息收集</span><span data-lang="ko">수동 채널<br>정보 수집</span><span data-lang="en">Manual channel<br>data collection</span></div>
+      </div>
+      <div>
+        <div class="dl" style="background:#7c3aed"><span data-lang="zh">周四</span><span data-lang="ko">목요일</span><span data-lang="en">Thursday</span></div>
+        <div class="dk"><span data-lang="zh">整理数据<br>填写模板</span><span data-lang="ko">데이터 정리<br>템플릿 작성</span><span data-lang="en">Organize data<br>Fill template</span></div>
+      </div>
+      <div>
+        <div class="dl" style="background:#0d9488"><span data-lang="zh">周五</span><span data-lang="ko">금요일</span><span data-lang="en">Friday</span></div>
+        <div class="dk"><span data-lang="zh">提交本周<br>收集数据</span><span data-lang="ko">이번 주 수집<br>데이터 제출</span><span data-lang="en">Submit weekly<br>collected data</span></div>
+      </div>
+      <div>
+        <div class="dl" style="background:#16a34a"><span data-lang="zh">n8n自动</span><span data-lang="ko">n8n 자동</span><span data-lang="en">n8n Auto</span></div>
+        <div class="dk"><span data-lang="zh">每周一<br>自动抓取</span><span data-lang="ko">매주 월요일<br>자동 수집</span><span data-lang="en">Every Monday<br>auto-scrape</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /ct -->
+
+<footer>
+  <div class="in">
+    <span><span data-lang="zh">韩国高校留学生项目信息收集 · 工作计划报告 · 2026年2月</span><span data-lang="ko">한국 대학 유학생 프로그램 정보 수집 · 업무계획보고서 · 2026년 2월</span><span data-lang="en">Korean University Int'l Student Program Data Collection · Work Plan Report · Feb 2026</span></span>
+    <span>Powered by Claude + Airtable + n8n</span>
+  </div>
+</footer>
+
+<script>
+// ===== LANGUAGE SYSTEM =====
+var currentLang = 'zh';
+var langLabels = { zh: '中文', ko: '한국어', en: 'English' };
+
+function setLang(lang) {
+  currentLang = lang;
+  // Update body class
+  document.body.classList.remove('lang-zh', 'lang-ko', 'lang-en');
+  document.body.classList.add('lang-' + lang);
+  // Update buttons
+  document.querySelectorAll('.lang-btn').forEach(function(b) {
+    b.classList.toggle('on', b.getAttribute('data-target') === lang);
+  });
+}
+
+// ===== TAB SYSTEM =====
+function showTab(id, btn) {
+  document.querySelectorAll('.tp').forEach(function(p) { p.classList.remove('on'); });
+  document.querySelectorAll('.nb').forEach(function(b) { b.classList.remove('on'); });
+  document.getElementById('tab-' + id).classList.add('on');
+  btn.classList.add('on');
+}
+
+function showAt(id, btn) {
+  document.querySelectorAll('.at-p').forEach(function(p) { p.classList.remove('on'); });
+  document.querySelectorAll('.tb-nb').forEach(function(b) { b.classList.remove('on'); });
+  document.getElementById('at-' + id).classList.add('on');
+  btn.classList.add('on');
+}
+
+// ===== AIRTABLE FIELD TABLES =====
+var tc = {'Auto Number':'ft-a','Single Line Text':'ft-t','Long Text':'ft-l','Single Select':'ft-s','Currency/Text':'ft-c','Number':'ft-n','Date':'ft-d','URL':'ft-u','Checkbox':'ft-k'};
+
+function rf(id, fields) {
+  var reqLang = { zh: '✓ 必填', ko: '✓ 필수', en: '✓ Req' };
+  var optLang = { zh: '—', ko: '—', en: '—' };
+  document.getElementById(id).innerHTML = fields.map(function(f, i) {
+    return '<tr><td class="sq">' + (i+1) + '</td><td class="fn">' + f.n + '</td><td><span class="ftype ' + (tc[f.t] || 'ft-a') + '">' + f.t + '</span></td><td class="fd">' + f.d + '</td><td>' + (f.r ? '<span class="ry">✓</span>' : '<span class="rn">—</span>') + '</td></tr>';
+  }).join('');
+}
+
+var d1=[
+  {n:'序号 / No.',t:'Auto Number',d:'自动编号 Auto',r:true},{n:'高校名称 / University',t:'Single Line Text',d:'中文+韩文 CN+KR name',r:true},
+  {n:'所在城市 / City',t:'Single Line Text',d:'首尔/大田/釜山 Seoul/Daejeon/Busan',r:true},{n:'项目模式 / Mode',t:'Single Select',d:'0+4 / 3+1 / 1+3 / 2+2',r:true},
+  {n:'中方合作院校 / CN Partner',t:'Long Text',d:'合作中国高校 Chinese partner universities',r:false},{n:'可招生专业 / Majors',t:'Long Text',d:'所有可选专业 Available majors',r:true},
+  {n:'学费（国内）/ Tuition CN',t:'Currency/Text',d:'人民币/年 CNY/yr',r:true},{n:'学费（韩国）/ Tuition KR',t:'Currency/Text',d:'韩元/学期 KRW/sem',r:true},
+  {n:'住宿费 / Housing',t:'Currency/Text',d:'韩国阶段住宿 Korea housing cost',r:false},{n:'奖学金政策 / Scholarship',t:'Long Text',d:'条件与金额 Conditions & amount',r:false},
+  {n:'QS排名 / QS Rank',t:'Single Line Text',d:'最新QS排名 Latest QS ranking',r:false},{n:'中国留学生数(2024) / CN Students',t:'Number',d:'2024在校中国留学生 2024 enrolled',r:false},
+  {n:'语言要求 / Language Req',t:'Single Line Text',d:'TOPIK等级 TOPIK level',r:false},{n:'授课语言 / Instruction Lang',t:'Single Select',d:'中/韩/双语/英 CN/KR/Bilingual/EN',r:false},
+  {n:'开办时间 / Since',t:'Single Line Text',d:'项目开始年份 Year established',r:false},{n:'项目优势 / Advantages',t:'Long Text',d:'特色与优势 Features & strengths',r:false},
+  {n:'信息来源 / Source',t:'Single Select',d:'官网/小红书/中介/n8n Official/XHS/Agency/n8n',r:true},{n:'相关链接 / Link',t:'URL',d:'官方项目链接 Official URL',r:false},
+  {n:'录入日期 / Entry Date',t:'Date',d:'录入时间 Record date',r:true},{n:'数据状态 / Status',t:'Single Select',d:'待核实/已确认/已过期 Pending/Confirmed/Expired',r:true}
+];
+var d2=[
+  {n:'序号 / No.',t:'Auto Number',d:'自动编号 Auto',r:true},{n:'高校名称 / University',t:'Single Line Text',d:'中文+韩文 CN+KR',r:true},
+  {n:'所在城市 / City',t:'Single Line Text',d:'校区城市 Campus city',r:true},{n:'项目模式 / Mode',t:'Single Select',d:'0+2 / 专升本 / 2+2',r:true},
+  {n:'可插班专业 / Transfer Majors',t:'Long Text',d:'具体专业列表 Specific major list',r:true},{n:'学费（学期）/ Tuition/Sem',t:'Currency/Text',d:'韩元/学期 KRW/sem',r:true},
+  {n:'入学金 / Admission Fee',t:'Currency/Text',d:'一次性入学金 One-time fee',r:false},{n:'宿舍政策 / Dorm Policy',t:'Long Text',d:'入住时长与费用 Duration & cost',r:false},
+  {n:'奖学金政策 / Scholarship',t:'Long Text',d:'TOPIK/GPA奖学金 Scholarship details',r:false},{n:'QS排名 / QS Rank',t:'Single Line Text',d:'QS排名 QS ranking',r:false},
+  {n:'语言要求 / Language Req',t:'Single Line Text',d:'TOPIK等级 TOPIK level',r:false},{n:'授课语言 / Instruction',t:'Single Select',d:'中/韩/双语/英',r:false},
+  {n:'2024年中国留学生数 / CN Students',t:'Number',d:'在校中国留学生 Enrolled CN students',r:false},{n:'服务内容 / Services',t:'Long Text',d:'接机/韩语辅导 Pickup/Korean tutoring',r:false},
+  {n:'返佣信息 / Commission',t:'Currency/Text',d:'中介返佣金额 Agency commission',r:false},{n:'项目优势 / Advantages',t:'Long Text',d:'学校特色 School features',r:false},
+  {n:'优秀认证大学 / Certified',t:'Checkbox',d:'是否优秀认证 Certified university?',r:false},{n:'信息来源 / Source',t:'Single Select',d:'官网/小红书/中介/n8n',r:true},
+  {n:'相关链接 / Link',t:'URL',d:'官方招生页面 Official page',r:false},{n:'录入日期 / Entry Date',t:'Date',d:'录入日期 Entry date',r:true},
+  {n:'数据状态 / Status',t:'Single Select',d:'待核实/已确认/已过期',r:true}
+];
+var d3=[
+  {n:'序号 / No.',t:'Auto Number',d:'自动编号',r:true},{n:'高校名称 / University',t:'Single Line Text',d:'韩国高校名 University name',r:true},
+  {n:'所在地 / Location',t:'Single Line Text',d:'城市/校区 City/campus',r:true},{n:'QS排名 / QS Rank',t:'Single Line Text',d:'QS世界排名',r:false},
+  {n:'项目名称/专业 / Program',t:'Long Text',d:'具体硕士项目 Master program name',r:true},{n:'学制 / Duration',t:'Single Select',d:'1年/1.5年/2年制',r:true},
+  {n:'学期结构 / Semester',t:'Single Line Text',d:'如2大学期+1小学期',r:false},{n:'授课语言 / Language',t:'Single Select',d:'双语/中文/英文/韩文',r:true},
+  {n:'学费（每学期）/ Tuition',t:'Currency/Text',d:'韩元/学期 KRW/sem',r:true},{n:'入学金 / Admission Fee',t:'Currency/Text',d:'入学金 KRW',r:false},
+  {n:'报名费 / Application Fee',t:'Currency/Text',d:'申请报名费 Application fee',r:false},{n:'宿舍费用 / Housing',t:'Long Text',d:'宿舍类型与价格',r:false},
+  {n:'奖学金政策 / Scholarship',t:'Long Text',d:'语言/GPA奖学金',r:false},{n:'语言要求 / Language Req',t:'Single Line Text',d:'TOPIK等级/校内课程',r:false},
+  {n:'学分要求 / Credits',t:'Single Line Text',d:'总学分 Total credits',r:false},{n:'论文要求 / Thesis',t:'Long Text',d:'论文/报告要求 Thesis/report requirements',r:false},
+  {n:'合作类型 / Partnership',t:'Single Select',d:'校-校/校-机构 School-School/School-Institution',r:false},{n:'服务内容 / Services',t:'Long Text',d:'接机/翻译/助教 Pickup/translation/TA',r:false},
+  {n:'2024年招生数 / Enrolled',t:'Number',d:'中国留学生招生数 CN students enrolled',r:false},{n:'信息来源 / Source',t:'Single Select',d:'官网/中介/n8n',r:true},
+  {n:'相关链接 / Link',t:'URL',d:'官方招生页面',r:false},{n:'录入日期 / Entry Date',t:'Date',d:'录入日期',r:true},
+  {n:'数据状态 / Status',t:'Single Select',d:'待核实/已确认/已过期',r:true}
+];
+var d4=[
+  {n:'序号 / No.',t:'Auto Number',d:'自动编号',r:true},{n:'高校名称 / University',t:'Single Line Text',d:'韩国高校名',r:true},
+  {n:'所在地 / Location',t:'Single Line Text',d:'城市/校区',r:true},{n:'QS排名 / QS Rank',t:'Single Line Text',d:'QS世界排名',r:false},
+  {n:'项目名称/专业 / Program',t:'Long Text',d:'博士项目名称 PhD program',r:true},{n:'项目模式 / Mode',t:'Single Select',d:'2+X / 1+1.5 / 联合培养',r:true},
+  {n:'学制 / Duration',t:'Single Select',d:'2年/2.5年/3年制',r:true},{n:'授课语言 / Language',t:'Single Select',d:'双语/中文/英文/韩文',r:true},
+  {n:'学费 / Tuition',t:'Currency/Text',d:'韩元/学期或人民币/年 KRW/sem or CNY/yr',r:true},{n:'入学金 / Admission Fee',t:'Currency/Text',d:'入学金 KRW',r:false},
+  {n:'报名费 / Application Fee',t:'Currency/Text',d:'申请报名费',r:false},{n:'宿舍费用 / Housing',t:'Long Text',d:'宿舍类型与价格',r:false},
+  {n:'奖学金政策 / Scholarship',t:'Long Text',d:'奖学金条件与金额',r:false},{n:'语言要求 / Language Req',t:'Single Line Text',d:'TOPIK级别/英语要求',r:false},
+  {n:'论文要求 / Dissertation',t:'Long Text',d:'期刊+学位论文要求 Journal + dissertation requirements',r:true},{n:'中方合作院校 / CN Partner',t:'Long Text',d:'联合培养中方合作机构 Joint supervision partner',r:false},
+  {n:'服务内容 / Services',t:'Long Text',d:'翻译助教/材料指导 Translation/material guidance',r:false},{n:'信息来源 / Source',t:'Single Select',d:'官网/中介/n8n',r:true},
+  {n:'相关链接 / Link',t:'URL',d:'官方招生页面',r:false},{n:'录入日期 / Entry Date',t:'Date',d:'录入日期',r:true},
+  {n:'数据状态 / Status',t:'Single Select',d:'待核实/已确认/已过期（含签证限制说明 incl. visa restrictions）',r:true}
+];
+
+rf('b1',d1); rf('b2',d2); rf('b3',d3); rf('b4',d4);
+</script>
+</body>
+</html>
